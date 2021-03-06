@@ -65,18 +65,18 @@ def send_check_result_pull(pull, comment):
 		r = requests.post(pull['url'] + '/comments', headers=prepare_headers(), data=json.dumps(prepare_body_pull(pull, comment)).encode("utf8"))
 		print(r.json())
 
+def check_pull(pull):
+	message = prepare_check_message(pull['title'])
+	for commit in get_all_commits(pull).json():
+		message = message + '\n' +  prepare_check_message(commit['commit']['message'])
+	send_check_result_pull(pull, message)
+
 def main():
 	r = get_all_pulls('ManulInTheBag','python_au', 'open')#using OcTatiana because my git is empty
 	message = ''
 	print(r)
 	for pull in r.json():
-		message = ''
-		message = message + prepare_check_message(pull['title'])
-		for commit in get_all_commits(pull).json():
-			#print(commit['commit']['message'])
-			#send_check_result_commit(value, prepare_check_message(value['message']))
-			message = message + '\n' +  prepare_check_message(commit['commit']['message'])
-		send_check_result_pull(pull, message)
+		check_pull(pull)
 
 #Actual script
 
