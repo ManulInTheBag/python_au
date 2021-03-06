@@ -6,7 +6,7 @@ import json
 #Constants
 
 TOKEN = 'imaclown' #insert your token instead of this string
-PREFIXES = ['GENERATOR', 'LEETCODE']
+PREFIXES = ['GENERATOR', 'LEETCODE', 'REQUESTS']
 GROUPS = ['1021', '1022', '1013', '2021', '2022']
 PR_ACTION = ['Added', 'Deleted', 'Refactored', 'Moved', 'Fixed']
 
