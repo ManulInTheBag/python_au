@@ -6,7 +6,7 @@ import json
 #Constants
 
 CHECKER = 'VERIFICATION'
-TOKEN = 'c111c2d67649c8999837ddd1b5564b158395df41' #insert your token instead of this string
+TOKEN = 'imaclown' #insert your token instead of this string
 PREFIXES = ['LEETCODE', 'GENERATOR', 'TRIANGLE', 'HEXNUMBER', 'REQUESTS', 'ITERATOR']
 GROUPS = ['1021', '1022']
 PR_ACTION = ['Added', 'Deleted', 'Refactored', 'Moved', 'Fixed']
